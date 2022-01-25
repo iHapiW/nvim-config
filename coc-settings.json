@@ -1,45 +1,13 @@
 {
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": [
-        "c",
-        "cc",
-        "cpp",
-        "c++",
-        "objc",
-        "objcpp",
-        "cxx"
-      ],
-      "rootPatterns": [
-        ".ccls",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
-        }
-      }
-    }
-  },
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "javascript",
-    "graphql",
-    "html",
-    "yaml",
-    "json"
+  "coc.prefrences.formatOnSaveFiletypes": [
+    "python",
+    "cpp",
+    "c",
+    "h",
+    "hpp"
   ],
-  "pyright.enable": true,
-  "python.analysis.autoImportCompletions": true,
-  "python.pythonPath": "/bin/python3",
-  "python.linting.enabled": true,
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "~/.config/nvim/snipets"
-  ]
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.local/bin/black",
+  "prettier.singleQuote": true,
+  "codeLens.enable": false
 }
