@@ -19,3 +19,5 @@ tags
 [._]*.un~
 
 plugged/*
+node_modules/
+yarn.lock
