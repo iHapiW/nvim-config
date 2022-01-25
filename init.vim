@@ -106,6 +106,7 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 nnoremap <F4> :bd<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <F2> :bo 20 sp term://zsh<CR>
+nnoremap <C-A-f> :call CocAction('format')<CR>
 nmap <C-k> <Plug>NERDCommenterToggle
 vmap <C-k> <Plug>NERDCommenterToggle<CR>gv
 
