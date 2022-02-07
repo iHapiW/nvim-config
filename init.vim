@@ -2,11 +2,12 @@
 filetype plugin indent on
 set fileformat=unix
 syntax on
-set encoding=utf-8
+set encoding=UTF-8
 
 " Options set background=dark
 set clipboard=unnamedplus                   " Enables Clipboard Sharing 
 set completeopt=noinsert,menuone,noselect   " Modifies auto-complete menu to behave like IDE
+set guifont=Fira\ Code\ Medium\ 10
 set cursorline                              " Highlights current line
 set hidden                                  " Hide unused buffers
 set inccommand=split                        " Show replacement in a split screen befire apply to file
@@ -74,6 +75,7 @@ call plug#begin()
   Plug 'ryanoasis/vim-devicons'
   Plug 'elvessousa/sobrio'
   Plug 'ap/vim-css-color'
+  Plug 'ajmwagar/vim-emoticons'
   Plug 'dracula/vim'
   
   " Utilities
@@ -107,7 +109,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-q> :q<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <F4> :bd<CR>
-nnoremap <F2> :bo 20 sp term://zsh<CR>
+nnoremap <F2> :bo 10 sp term://zsh<CR>
 nnoremap <C-A-f> :call CocAction('format')<CR>
 
 " Tabs
@@ -132,3 +134,10 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:python_recommended_style = 0
+
+" Devicons Config
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1

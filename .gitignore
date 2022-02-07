@@ -21,3 +21,4 @@ tags
 plugged/*
 node_modules/
 yarn.lock
+bundle/
