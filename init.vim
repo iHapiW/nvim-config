@@ -99,7 +99,7 @@ call plug#end()
 "colorscheme dracula
 
 let g:onedark_config = {
-  \ 'style' : 'dark',
+  \ 'style' : 'warm',
   \}
 
 colorscheme onedark
@@ -116,8 +116,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Normal Mode remappings
 nnoremap <C-q> :q<CR>
-nnoremap <C-s> :w<CR>
-nnoremap <F4> :bd<CR>
+nnoremap <C-s> :w<CR> nnoremap <F4> :bd<CR>
 nnoremap <F2> :bo 10 sp term://zsh<CR>
 nnoremap <C-A-f> :call CocAction('format')<CR>
 
