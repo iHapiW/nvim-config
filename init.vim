@@ -11,8 +11,7 @@ set encoding=UTF-8
 set clipboard=unnamedplus                   " Enables Clipboard Sharing 
 set completeopt=noinsert,menuone,noselect   " Modifies auto-complete menu to behave like IDE
 "set guifont=Fira\ Code\ Medium\ 10
-set cursorline                              " Highlights current line
-set hidden                                  " Hide unused buffers set inccommand=split                        " Show replacement in a split screen befire apply to file set number
+set cursorline                              " Highlights current line set hidden                                  " Hide unused buffers set inccommand=split                        " Show replacement in a split screen befire apply to file set number
 "set relativenumber
 set number
 set splitbelow splitright
@@ -79,6 +78,7 @@ call plug#begin()
   Plug 'ap/vim-css-color'
   Plug 'ajmwagar/vim-emoticons'
   Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'navarasu/onedark.nvim'
   
   " Utilities
   Plug 'sheerun/vim-polyglot'
@@ -96,8 +96,14 @@ call plug#begin()
 call plug#end()
 
 " Color Scheme Configuration
-colorscheme dracula
-let g:airline_theme='dracula'
+"colorscheme dracula
+
+let g:onedark_config = {
+  \ 'style' : 'dark',
+  \}
+
+colorscheme onedark
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
