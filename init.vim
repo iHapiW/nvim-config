@@ -1,3 +1,6 @@
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 " Syntax ( Add automatic syntax support for open files )
 filetype plugin indent on
 set fileformat=unix
@@ -7,12 +10,11 @@ set encoding=UTF-8
 " Options set background=dark
 set clipboard=unnamedplus                   " Enables Clipboard Sharing 
 set completeopt=noinsert,menuone,noselect   " Modifies auto-complete menu to behave like IDE
-set guifont=Fira\ Code\ Medium\ 10
+"set guifont=Fira\ Code\ Medium\ 10
 set cursorline                              " Highlights current line
-set hidden                                  " Hide unused buffers
-set inccommand=split                        " Show replacement in a split screen befire apply to file
+set hidden                                  " Hide unused buffers set inccommand=split                        " Show replacement in a split screen befire apply to file set number
+"set relativenumber
 set number
-set relativenumber
 set splitbelow splitright
 set title
 set ttimeoutlen=0                           " Time in milisconds to run commands
@@ -76,7 +78,7 @@ call plug#begin()
   Plug 'elvessousa/sobrio'
   Plug 'ap/vim-css-color'
   Plug 'ajmwagar/vim-emoticons'
-  Plug 'dracula/vim'
+  Plug 'dracula/vim', { 'as': 'dracula' }
   
   " Utilities
   Plug 'sheerun/vim-polyglot'
@@ -89,12 +91,13 @@ call plug#begin()
   " Completion / Linters / formatters
   Plug 'neoclide/coc.nvim' , { 'branch': 'release' }
   Plug 'plasticboy/vim-markdown'
+  Plug 'Shirk/vim-gas'
 
 call plug#end()
 
 " Color Scheme Configuration
-colorscheme sobrio
-let g:airline_theme='sobrio'
+colorscheme dracula
+let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -141,3 +144,5 @@ let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
+
+au BufRead,BufNewFile *.asm setfiletype gas

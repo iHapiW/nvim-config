@@ -1,22 +1,22 @@
 {
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "cxx"],
-      "rootPatterns": [
-        ".ccls",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
-        }
-      }
-    }
-  },
+  //"languageserver": {
+    //"ccls": {
+      //"command": "ccls",
+      //"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "cxx"],
+      //"rootPatterns": [
+        //".ccls",
+        //"compile_commands.json",
+        //".vim/",
+        //".git/",
+        //".hg/"
+      //],
+      //"initializationOptions": {
+        //"cache": {
+          //"directory": "/tmp/ccls"
+        //}
+      //}
+    //}
+  //},
   "pyright.enable": true,
   "python.analysis.autoImportCompletions": true,
   "python.pythonPath": "/bin/python3",
