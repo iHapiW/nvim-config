@@ -9,26 +9,25 @@ set encoding=UTF-8
 
 " Options set background=dark
 set clipboard=unnamedplus                   " Enables Clipboard Sharing 
-set completeopt=noinsert,menuone,noselect   " Modifies auto-complete menu to behave like IDE
+set completeopt=noinsert,menuone,preview   " Modifies auto-complete menu to behave like IDE
 "set guifont=Fira\ Code\ Medium\ 10
 set cursorline                              " Highlights current line set hidden                                  " Hide unused buffers set inccommand=split                        " Show replacement in a split screen befire apply to file set number
-"set relativenumber
-set number
+"set relativenumber set number
 set splitbelow splitright
 set title
 set ttimeoutlen=0                           " Time in milisconds to run commands
-set wildmenu                                " Shows more advanced menu for auto-completion
+"set wildmenu                                " Shows more advanced menu for auto-completion
 set scrolloff=10
 set smartcase
 set hlsearch
-set noerrorbells
+"set noerrorbells
 set nowrap
 let mapleader=' '
 
 " Tab Size
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set smartindent
 
@@ -91,7 +90,6 @@ call plug#begin()
   " Completion / Linters / formatters
   Plug 'neoclide/coc.nvim' , { 'branch': 'release' }
   Plug 'plasticboy/vim-markdown'
-  Plug 'Shirk/vim-gas'
 
 call plug#end()
 
@@ -99,7 +97,7 @@ call plug#end()
 "colorscheme dracula
 
 let g:onedark_config = {
-  \ 'style' : 'warm',
+  \ 'style' : 'dark',
   \}
 
 colorscheme onedark
@@ -108,6 +106,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " NERD Configuration
+let g:NERDTreeIgnore = ['\..+']
 let NERDTreeShowHidden=1
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 nmap <C-k> <Plug>NERDCommenterToggle
@@ -150,4 +149,6 @@ let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 
-au BufRead,BufNewFile *.asm setfiletype gas
+au BufRead,BufNewFile *.asm setfiletype nasm
+au BufRead,BufNewFile *.s setfiletype nasm
+au BufRead,BufNewFile *.S setfiletype nasm
