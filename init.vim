@@ -12,14 +12,15 @@ set clipboard=unnamedplus                   " Enables Clipboard Sharing
 set completeopt=noinsert,menuone,preview   " Modifies auto-complete menu to behave like IDE
 "set guifont=Fira\ Code\ Medium\ 10
 set cursorline                              " Highlights current line set hidden                                  " Hide unused buffers set inccommand=split                        " Show replacement in a split screen befire apply to file set number
-"set relativenumber set number
+"set relativenumber
+set number
 set splitbelow splitright
 set title
 set ttimeoutlen=0                           " Time in milisconds to run commands
 "set wildmenu                                " Shows more advanced menu for auto-completion
 set scrolloff=10
 set smartcase
-set hlsearch
+"set hlsearch
 "set noerrorbells
 set nowrap
 let mapleader=' '
