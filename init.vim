@@ -2,6 +2,7 @@
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " Syntax ( Add automatic syntax support for open files )
+"
 filetype plugin indent on
 set fileformat=unix
 syntax on
