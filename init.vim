@@ -24,9 +24,7 @@ set smartcase
 "set hlsearch
 "set noerrorbells
 set nowrap
-let mapleader=' '
-
-" Tab Size
+let mapleader=' ' " Tab Size
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -96,8 +94,6 @@ call plug#begin()
 call plug#end()
 
 " Color Scheme Configuration
-"colorscheme dracula
-
 let g:onedark_config = {
   \ 'style' : 'dark',
   \}
@@ -115,8 +111,6 @@ vmap <C-k> <Plug>NERDCommenterToggle<CR>gv
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Normal Mode remappings
-nnoremap <C-q> :q<CR>
-nnoremap <C-s> :w<CR> nnoremap <F4> :bd<CR>
 nnoremap <F2> :bo 10 sp term://zsh<CR>
 nnoremap <C-A-f> :call CocAction('format')<CR>
 
@@ -153,3 +147,4 @@ let g:webdevicons_enable_airline_statusline = 1
 au BufRead,BufNewFile *.asm setfiletype nasm
 au BufRead,BufNewFile *.s setfiletype nasm
 au BufRead,BufNewFile *.S setfiletype nasm
+autocmd FileType nasm setlocal tabstop=8 shiftwidth=8 softtabstop=8 expandtab
