@@ -25,5 +25,6 @@
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "prettier.singleQuote": true,
-  "codeLens.enable": false
+  "codeLens.enable": false,
+  "suggest.noselect" : false
 }

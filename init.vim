@@ -1,6 +1,3 @@
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 " Syntax ( Add automatic syntax support for open files )
 "
 filetype plugin indent on
@@ -11,18 +8,13 @@ set encoding=UTF-8
 " Options set background=dark
 set clipboard=unnamedplus                   " Enables Clipboard Sharing 
 set completeopt=noinsert,menuone,preview   " Modifies auto-complete menu to behave like IDE
-"set guifont=Fira\ Code\ Medium\ 10
 set cursorline                              " Highlights current line set hidden                                  " Hide unused buffers set inccommand=split                        " Show replacement in a split screen befire apply to file set number
-"set relativenumber
 set number
 set splitbelow splitright
 set title
 set ttimeoutlen=0                           " Time in milisconds to run commands
-"set wildmenu                                " Shows more advanced menu for auto-completion
 set scrolloff=10
 set smartcase
-"set hlsearch
-"set noerrorbells
 set nowrap
 let mapleader=' ' " Tab Size
 set tabstop=4
@@ -45,25 +37,6 @@ endif
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-" NetRW File Browser Config
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_win_size=25
-let g:netrw_keepdir=0
-let g:netrw_localcopydircmd='cp -r'
-
-function! CreateInPreview()                  " Create file without opening buffer
-  let l:filename = input('please enter filename: ')
-  execute 'silent !touch ' . b:netrw_curdir.'/'.l:filename
-  redraw!
-endfunction
-
-function! Netrw_mappings()                   " Netrw: create file using touch instead of opening a buffer
-  noremap <buffer>% :call CreateInPreview()<cr>
-endfunction
-
 " Sources
 source $HOME/.config/nvim/plug-config/coc.vim
 
@@ -78,6 +51,9 @@ call plug#begin()
   Plug 'ajmwagar/vim-emoticons'
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'navarasu/onedark.nvim'
+  Plug 'EdenEast/nightfox.nvim'
+  Plug 'sainnhe/sonokai'
+  Plug 'xiyaowong/nvim-transparent'
   
   " Utilities
   Plug 'sheerun/vim-polyglot'
@@ -93,15 +69,17 @@ call plug#begin()
 
 call plug#end()
 
-" Color Scheme Configuration
-let g:onedark_config = {
-  \ 'style' : 'dark',
-  \}
 
-colorscheme onedark
+let g:transparent_enabled = v:true
+let g:sonokai_style = 'maia'
+let g:sonokai_better_performance = 1
+let g:sonokai_cursor = 'blue'
+
+colorscheme sonokai
 
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_theme = 'sonokai'
 
 " NERD Configuration
 let NERDTreeShowHidden=0
@@ -124,10 +102,8 @@ augroup auto_commands
     autocmd filetype netrw call Netrw_mappings()
 augroup END
 
-"augroup auto_commands
-  "autocmd BufWrite *.py call CocAction('format')
-"augroup END
-
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " UltraSnips Config
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/ultisnips']
