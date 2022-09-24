@@ -1,5 +1,6 @@
-" Syntax ( Add automatic syntax support for open files )
-"
+" Vim-Plug Installation:
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 filetype plugin indent on
 set fileformat=unix
 syntax on
